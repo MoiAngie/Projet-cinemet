@@ -176,37 +176,72 @@ span.m-toggle-icon:after{top: -13px;}
 }
 
 #carou{
-	width: 70%;
-	height: 210px;
+	width: 60%;
+	height: 340px;
 	margin: 0 auto;
 	display: flex;
-	background-color: #00272C;
+	background-color: #444561;
 	perspective: 800px;
 	justify-content: space-between;
 	margin-bottom: 20px;
 	border: 2px solid #000000;
 }
+
 .carouCard{
-	height: 170px;
+	height: 300px;
 	min-width: var(--cCardW);
 	#min-width: calc(25% - 20px);
-	#min-width: 170px;
-	background-color: #337E8C;
+	#min-width: 200px;
+	background-color: #1794ef;
 	border: 2px solid black;
-	padding: 10px;
+	padding: 5px;
 	margin: var(--cCardMargins);
 	transition-duration: 0.2s;
 }
+
+.img-center {
+  position: relative;
+  left: 1em;
+}
+
+.img-center:hover {
+  height: 308px;
+}
+
+.leftC img {
+  width: 9em;
+  height: 16.5em;
+}
+
+.leftC img:hover {
+  width: 17em;
+  height: 19em;
+  padding-left: 0.2em;
+}
+
+
+.rightC img {
+  width: 9em;
+  height: 16.5em;
+  float: right;
+}
+
+.rightC img:hover {
+  width: 17em;
+  height: 19em;
+  padding-right: 0.2em;
+}
+
 .rightC{
 	transform: rotateY(-40deg);
-	height: 150px;
+	height: 280px;
 }
 #c4{
 	z-index: 3;
 }
 .leftC{
 	transform: rotateY(40deg);
-	height: 150px;
+	height: 280px;
 }
 #c5{
 	z-index: 2;
@@ -222,52 +257,10 @@ span.m-toggle-icon:after{top: -13px;}
 }
 .carouCard:hover{
 	transform: rotateY(0);
-	height: 180px;
+	height: 320px;
 	z-index: 15 !important;
 	background-color: white;
 }
-#carouSlider{
-	width: 50%;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	appearance: none;
-	-webkit-appearance: none;
-	background-color: #00272C;
-	border: 2px solid #438996;
-	border-radius: 4px;
-	height: 17px;
-}
-#carouSlider::-ms-thumb{
-	background-color: #000;
-	width: 14.3%;
-	height: 17px;
-	border: 2px solid #438996;
-	border-top: 0;
-	border-bottom: 0;
-	cursor: pointer;
-}
-#carouSlider::-moz-range-thumb{
-	background-color: #000;
-	width: 14.3%;
-	height: 17px;
-	border: 2px solid #438996;
-	border-top: 0;
-	border-bottom: 0;
-	cursor: pointer;
-	border-radius: 0;
-}
-#carouSlider::-webkit-slider-thumb{
-	-webkit-appearance: none;
-	background-color: #000;
-	width: 14.3%;
-	height: 17px;
-	border: 2px solid #438996;
-	border-top: 0;
-	border-bottom: 0;
-	cursor: pointer;
-}
-
-
 
 /*------------------------------
 ----pour le titre---------------
