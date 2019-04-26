@@ -154,6 +154,9 @@ span.m-toggle-icon:after{top: -13px;}
   95%{
       left: -300%;
   }
+  100%{
+    left: -400%;
+}
 }
 
 
