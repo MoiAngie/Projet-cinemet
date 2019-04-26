@@ -23,6 +23,9 @@
 }
 
 /********************************** NAVBAR ***********************************/
+#logo {
+  font-size: 2em;
+}
 
 #Navbar{
   display: flex;
@@ -32,7 +35,7 @@
  margin:auto;
  font-weight:bolder;
  font-family: 'Marko One', serif;
- font-size: 20px;
+ font-size: 2em;
 }
 
 #link_nav{
@@ -44,10 +47,7 @@
  padding-top:10px;
  padding-bottom:10px;
  background-color:transparent;
- font-size: 1.8em;
 }
-
-
 
 #link_nav a{
   text-decoration: none;
@@ -60,7 +60,8 @@
 }
 
 #link_nav a:hover{
-  color:grey;
+  color: #ffe640;
+  font-size: 1.1em;
 }
 
 hr {
@@ -262,6 +263,36 @@ span.m-toggle-icon:after{top: -13px;}
 .parallax-window {
   min-height: 25em;
   background-color: transparent;
+}
+
+
+/*--------------------------------
+-------pour l'encart photo+texte--
+--------------------------------*/
+
+.encart {
+  margin: 3em auto;
+  padding: 3em;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.fond-img {
+  background-color: #1794ef;
+  border: 2px solid black;
+  width: 29em;
+  height: 22em;
+  padding: 0.7em;
+  grid-column: 1 / span 1;
+}
+
+.blabla {
+  grid-column: 2 / span 2;
+  padding: 2em;
+}
+
+.titre-encart {
+  color: #444561;
 }
 
 /*------------------------------
