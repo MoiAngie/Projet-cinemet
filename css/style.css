@@ -201,6 +201,9 @@ span.m-toggle-icon:after{top: -13px;}
 	transition-duration: 0.2s;
 }
 
+.img-center {
+  padding-left: 1em;
+}
 
 .img-center:hover {
   height: 308px;
