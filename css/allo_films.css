@@ -99,8 +99,8 @@ span.m-toggle-icon:after {
   padding-bottom: 1%;
   width: 100%;
   min-height: 18vh;
-  background-color: #474747
-}
+  background-color: #444561;
+  }
 
 .ligne {
   flex-direction: row;
@@ -120,7 +120,7 @@ span.m-toggle-icon:after {
 }
 
 .header_films h1 {
-  color: #dadba7;
+  color: #1794ef;
   text-align: center;
   font-family: 'Poiret One', cursive;
   text-shadow: .06em .03em rgba(0, 0, 0, 0.404);
@@ -141,7 +141,7 @@ span.m-toggle-icon:after {
   border-radius: 0px 15px 15px 0px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #dadba7;
+  background-color: #444561;
   height: 95%;
   border-right: solid 5px #4747478a;
   border-top: solid 5px #4747478a;
@@ -182,7 +182,7 @@ button {
 
 #menu-accordeon li {
   margin-top: 30px;
-  background-color: #474747;
+  background-color: #1794ef;
   border-radius: 6px;
   margin-bottom: 2px;
 
@@ -349,7 +349,7 @@ button:focus {
 /********************************** FOOOTER ***********************************/
 
 #footer {
-  background-color: #dadba7;
+  background-color: #444561;
   font-family: 'Roboto Condensed', sans-serif;
   border-block-start: solid 5px #47474773;
 }
