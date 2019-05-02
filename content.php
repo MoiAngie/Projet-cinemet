@@ -22,6 +22,12 @@
 
 <body>
 
+
+  <!--je me connecte à la base de données -->
+    <?php
+    require_once 'connectbdd.php';
+    ?>
+
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <header id="haut">
