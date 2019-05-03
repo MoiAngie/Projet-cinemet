@@ -66,10 +66,10 @@
 </div>
 </div>
 
-    <!-- pour l'image du film -->
-    <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="image/<?php echo $donnees['image']; ?>" class="mr-3" width="800" height="448">
-    </div>
+    <!-- pour l'image du film
+    <div class="media shadow-lg p-3 mb-5 bg-light rounded">-->
+      <center><img src="image/<?php echo $donnees['image']; ?>" class="mr-3 image-du-film" width="800" height="448"></center>
+      <!-- </div>-->
 
     <!-- pour la description du film -->
 

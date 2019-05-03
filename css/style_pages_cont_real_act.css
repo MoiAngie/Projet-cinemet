@@ -109,6 +109,7 @@ span.m-toggle-icon:after{top: -13px;}
     min-height: 20vh;
     background-color: #474747;
     padding-bottom: 1%;
+    margin-bottom: 2em;
 }
 
 #content h1, #real h1, #acteur h1 {
@@ -145,12 +146,12 @@ span.m-toggle-icon:after{top: -13px;}
 ----pour l'image du film sur content------
 -----------------------------------------*/
 
-#content .media {
+#content .media, {
   width: 70%;
-  height: 400px;
+  height: 700px;
   margin: 20px auto;
+  padding: 5px auto;
 }
-
 
 /*------------------------------
 ----pour la partie texte------
