@@ -29,7 +29,7 @@
     <?php
 
     // On récupère tout le contenu de la table films
-    $reponse = $bdd->query('SELECT * FROM films WHERE id =".$_GET["ID"]');
+    $reponse = $bdd->query('SELECT * FROM films');
 
     // On affiche chaque entrée une à une
     while ($donnees = $reponse->fetch())
@@ -40,12 +40,12 @@
 
     <header id="haut">
         <nav class="fixed-top" id="link_nav">
-            <a href="index.thml" id="logo">ALLOCINE<strong>MET</strong></a>
+            <a href="index.php" id="logo">ALLOCINE<strong>MET</strong></a>
             <div id="Navbar">
-                <a class="liens" href="allo_films.html">FILMS </a>
-                <a class="liens"href="contact.html">CONTACT </a>
-                <a class="liens"href="acteur.html">ACTEURS </a>
-                <a class="liens"href="realisateur.html">REALISATEURS </a>
+                <a class="liens" href="allo_films.php">FILMS </a>
+                <a class="liens"href="contact.php">CONTACT </a>
+                <a class="liens"href="acteur.php">ACTEURS </a>
+                <a class="liens"href="realisateur.php">REALISATEURS </a>
             </div>
             <div class="m-nav-toggle">
                 <span class="m-toggle-icon"></span>
@@ -59,7 +59,7 @@
     <!--  pour le titre -->
 
   <div class="hoofd">
-    <h1 class="text-uppercase">Titre du film</h1>
+    <h1 class="text-uppercase"><?php echo $donnees['titre']; ?></h1>
     <div class="fleches_2">
     <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
     <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
@@ -68,23 +68,13 @@
 
     <!-- pour l'image du film -->
     <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="affiche/<? echo $donnees['affiche']; ?>" class="mr-3" alt="...">
+      <img src="image/<? echo $donnees['image']; ?>" class="mr-3" alt="...">
     </div>
 
     <!-- pour la description du film -->
 
-    <p class="text-center bg-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p class="text-center bg-light">
+      <?php echo $donnees['synopsis']; ?>
     </p>
 
     <!-- pour la partie récap d'infos et la bande annonce -->
@@ -94,33 +84,39 @@
     <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
 
     <div class="list-group">
-  <a href="realisateur.html" class="list-group-item list-group-item-action">
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Date de sortie: <?php echo $donnees['date_sortie']; ?></h5>
+        </div>
+        <p class="mb-1"><?php echo $donnees['durée']; ?></p>
+        <!--<small>Donec id elit non mi porta.</small>-->
+  <a href="realisateur.php" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Réalisateur</h5>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small>Donec id elit non mi porta.</small>
+    <p class="mb-1"><?php echo $donnees['realisateur']; ?></p>
+    <!--<small>Donec id elit non mi porta.</small>-->
   </a>
   <a href="#" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Production</h5>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
+    <p class="mb-1"><?php echo $donnees['producteur'] ?></p>
+    <!--<small class="text-muted">Donec id elit non mi porta.</small>-->
   </a>
-  <a href="acteur.html" class="list-group-item list-group-item-action">
+  <a href="acteur.php" class="list-group-item list-group-item-action">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">Acteurs</h5>
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
+    <p class="mb-1"><?php echo $donnees['acteur_1']; ?> et <?php echo $donnees['actrice_1']; ?></p>
+    <small class="text-muted"><?php echo $donnees['acteur_2']; ?> et <?php echo $donnees['actrice_2']; ?></small>
   </a>
 </div>
 </div>
 
   <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
   <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
-    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="" height="250px" width="450px"></iframe>
+    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="" height="250px" width="450px"><?php echo $donnees['video']; ?></iframe>
   </div>
 
 <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
