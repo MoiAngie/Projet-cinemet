@@ -17,6 +17,20 @@
 </head>
 
 <body>
+  <!--je me connecte à la base de données -->
+    <?php
+    require_once 'connectbdd.php';
+    ?>
+
+    <?php
+
+    // On récupère tout le contenu de la table films
+    $reponse = $bdd->query('SELECT * FROM films');
+
+      // On affiche chaque entrée une à une
+    while ($donnees = $reponse->fetch())
+    {
+    ?>
 
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -142,34 +156,34 @@
         <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="liens_films fadeInUp animated">
                 <div class="titre"> Nouveautés </div><br />
-                <a href="content.php?ID=1"><img class="effect" src="affiche/<? echo $donnees['affiche']; ?>" id="action">
+                <a href="content.php?ID=1"><img class="effect" src="affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=2"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                <a href="content.php?ID=2"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=3"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                <a href="content.php?ID=3"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=4"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                <a href="content.php?ID=4"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=5"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                <a href="content.php?ID=5"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=6"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                <a href="content.php?ID=6"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=7"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                <a href="content.php?ID=7"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=8"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                <a href="content.php?ID=8"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=9"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                <a href="content.php?ID=9"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=10"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                <a href="content.php?ID=10"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
             </div>
@@ -202,22 +216,6 @@
                     <p>></p>
         </button>
     </div>
-
-    <!--            APPARITION IMAGE SELON SCROLL
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <script>
-var derniere_position_de_scroll_connue = 0;
-function faireQuelqueChose(position_scroll) {
-  // faire quelque chose avec la position du scroll
-}
-window.addEventListener(function(e) {
-           //     TweenMax.to('.liens_films', 4, {y: -800, ease: Elastic.easeOut.config(0.5, 0.2) });
-                TweenLite.to('.liens_films', 0.8, {delay: 1, ease: Power1.easeOut, y: -800, opacity: 1 });
-            })
-
-        </script>
-        -->
-
 
     <!--//////////////////////////////  FOOTER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -358,6 +356,12 @@ window.addEventListener(function(e) {
 
     <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
+
+    <!--I close the while -->
+    <?php
+    }
+    //to let know my request is finished
+    $reponse->closeCursor(); ?>
 
 
     <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->

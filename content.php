@@ -29,7 +29,7 @@
     <?php
 
     // On récupère tout le contenu de la table films
-    $reponse = $bdd->query('SELECT * FROM films');
+    $reponse = $bdd->query('SELECT * FROM films WHERE id =".$_GET['ID']');
 
       // On affiche chaque entrée une à une
     while ($donnees = $reponse->fetch())
