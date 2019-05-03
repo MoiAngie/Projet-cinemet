@@ -21,11 +21,19 @@
 </head>
 
 <body>
-
-
   <!--je me connecte à la base de données -->
     <?php
     require_once 'connectbdd.php';
+    ?>
+
+    <?php
+
+    // On récupère tout le contenu de la table films
+    $reponse = $bdd->query('SELECT * FROM films WHERE id =".$_GET["ID"]');
+
+    // On affiche chaque entrée une à une
+    while ($donnees = $reponse->fetch())
+    {
     ?>
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -60,7 +68,7 @@
 
     <!-- pour l'image du film -->
     <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="..." class="mr-3" alt="...">
+      <img src="affiche/<? echo $donnees['affiche']; ?>" class="mr-3" alt="...">
     </div>
 
     <!-- pour la description du film -->
@@ -251,6 +259,12 @@
     <!-- Footer Links -->
 
   </footer>
+
+  <!--I close the while -->
+  <?php
+  }
+  //to let know my request is finished
+  $reponse->closeCursor(); ?>
 
   <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 

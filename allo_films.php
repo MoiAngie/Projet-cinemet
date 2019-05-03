@@ -18,10 +18,6 @@
 
 <body>
 
-  <!--je me connecte à la base de données -->
-    <?php
-    require_once 'connectbdd.php';
-    ?>
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -142,38 +138,39 @@
 
         <!--//////////////////////////////  MINIATURES FILMS DROITE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
+
         <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="liens_films fadeInUp animated">
                 <div class="titre"> Nouveautés </div><br />
-                <a href="content.html"><img class="effect " src="img/1.jpg" id="action">
-                    <p>blablabla</p>
+                <a href="content.php?ID=1"><img class="effect" src="affiche/<? echo $donnees['affiche']; ?>" id="action">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/2.jpg" id="science-fiction">
-                    <p>blablabla</p>
+                <a href="content.php?ID=2"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/3.jpg" id="horreur">
-                    <p>blablabla</p>
+                <a href="content.php?ID=3"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/4.jpg" id="action">
-                    <p>blablabla</p>
+                <a href="content.php?ID=4"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/5.jpg" id="science-fiction">
-                    <p>blablabla</p>
+                <a href="content.php?ID=5"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/6.jpg" id="horreur">
-                    <p>blablabla</p>
+                <a href="content.php?ID=6"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/7.jpg" id="action">
-                    <p>blablabla</p>
+                <a href="content.php?ID=7"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/8.jpg" id="science-fiction">
-                    <p>blablabla</p>
+                <a href="content.php?ID=8"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="science-fiction">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/9.jpg" id="horreur">
-                    <p>blablabla</p>
+                <a href="content.php?ID=9"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="horreur">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.html"><img class="effect " src="img/10.jpg" id="action">
-                    <p>blablabla</p>
+                <a href="content.php?ID=10"><img class="effect " src="img/affiche/<? echo $donnees['affiche']; ?>" id="action">
+                    <p><?php echo $donnees['titre']; ?></p>
                 </a>
             </div>
         </div>
@@ -360,6 +357,7 @@ window.addEventListener(function(e) {
     <!--//////////////////////////////  BACK TO TOP BTN  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
+
 
 
     <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
