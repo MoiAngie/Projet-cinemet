@@ -31,7 +31,7 @@
     // On récupère tout le contenu de la table films
     $reponse = $bdd->query('SELECT * FROM films');
 
-    // On affiche chaque entrée une à une
+      // On affiche chaque entrée une à une
     while ($donnees = $reponse->fetch())
     {
     ?>
@@ -68,7 +68,7 @@
 
     <!-- pour l'image du film -->
     <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="image/<? echo $donnees['image']; ?>" class="mr-3" alt="...">
+      <img src="image/<?php echo $donnees['image']; ?>" class="mr-3" width="800" height="448">
     </div>
 
     <!-- pour la description du film -->
