@@ -22,22 +22,13 @@
     require_once 'connectbdd.php';
     ?>
 
-    <?php
-
-    // On récupère tout le contenu de la table films
-    $reponse = $bdd->query('SELECT * FROM films');
-
-      // On affiche chaque entrée une à une
-    while ($donnees = $reponse->fetch())
-    {
-    ?>
 
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <header id="haut">
         <nav class="fixed-top" id="link_nav">
-            <a href="index.html" id="logo">ALLOCINE<strong>MET</strong></a>
+            <a href="index.php" id="logo">ALLOCINE<strong>MET</strong></a>
             <div id="Navbar">
                 <a class="liens" href="allo_films.php">FILMS </a>
                 <a class="liens" href="contact.php">CONTACT </a>
@@ -53,7 +44,7 @@
     <!--//////////////////////////////  HEADER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="header_films">
-        <h1 class="animated flipInY delay-1s">NOS FILMS</h1>
+        <h1 class="animated flipInY delay-1s">MES FILMS</h1>
 
     </div>
 
@@ -67,55 +58,42 @@
 
                     <button>Rechercher</button>
 
-                    <li><a href="#" class="collapsible">Action</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <?php
+
+                    // On joint les 2 tables films et genre_film
+                    $reponse = $bdd->query("SELECT films.titre, genre_film.type_film FROM films INNER JOIN genre_film ON films.genre_film = genre_film.ID_genre LIMIT 0, 10" );
+
+
+                    while ($donnees = $reponse->fetch())
+                    {
+                    ?>
+
+                    <li><a href="allo_films.php?id='action'" class="collapsible">Action</a>
+
                     </li>
-                    <li><a href="#" class="collapsible">Science-fiction</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <li><a href="allo_films.php?id='fantastique'" class="collapsible">Fantastique</a>
+
                     </li>
-                    <li><a href="#" class="collapsible">Comédie</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <li><a href="allo_films.php?id='comédie'" class="collapsible">Comédie</a>
+
                     </li>
-                    <li><a href="#" class="collapsible">Drame</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <li><a href="allo_films.php?id='drame'" class="collapsible">Drame</a>
+
                     </li>
-                    <li><a href="#" class="collapsible">Animation</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <li><a href="allo_films.php?id='animation'" class="collapsible">Animation</a>
+
                     </li>
-                    <li><a href="#" class="collapsible">Horreur</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <li><a href="allo_films.php?id='horreur'" class="collapsible">Horreur</a>
+
                     </li>
                 </ul>
+
+                <!--I close the while -->
+                <?php
+                }
+          
+                //to let know my request is finished
+                $reponse->closeCursor(); ?>
             </div>
 
             <!--//////////////////////////////  LISTE GAUCHE POUR SMARTPHONE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -156,38 +134,31 @@
         <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="liens_films fadeInUp animated">
                 <div class="titre"> Nouveautés </div><br />
-                <a href="content.php?ID=1"><img class="effect" src="affiche/<?php echo $donnees['affiche']; ?>" id="action">
+
+                  <?php
+
+                  // On récupère tout le contenu de la table films
+                  $reponse = $bdd->query('SELECT * FROM films');
+
+                    // On affiche chaque entrée une à une
+                  while ($donnees = $reponse->fetch())
+                  {
+                  ?>
+
+                <a href="content.php?ID=<?php echo $donnees['id']; ?>"><img class="effect" src="affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
-                <a href="content.php?ID=2"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=3"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=4"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=5"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=6"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=7"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=8"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="science-fiction">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=9"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="horreur">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
-                <a href="content.php?ID=10"><img class="effect " src="img/affiche/<?php echo $donnees['affiche']; ?>" id="action">
-                    <p><?php echo $donnees['titre']; ?></p>
-                </a>
+
+                <!--I close the while -->
+                <?php
+                }
+                ?>
             </div>
         </div>
+        <?php
+        //to let know my request is finished
+        $reponse->closeCursor(); ?>
+
 
         <!--//////////////////////////////  CAROUSEL SIEMA  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -243,7 +214,9 @@
                 <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 mx-auto mt-3" id="foot">
                     <h5 class="text-uppercase mb-4 font-weight-bold">Films à l'affiche</h5>
                     <p>
-                        <a href="#">Film 1</a>
+
+
+            <a href="#">Film 1</a>
                     </p>
                     <p>
                         <a href="#">Film 2</a>
@@ -255,7 +228,9 @@
                         <a href="#">Film 4</a>
                     </p>
                 </div>
-                <!-- Grid column -->
+
+
+      <!-- Grid column -->
 
                 <hr class="w-100 clearfix d-md-none" id="foot">
 
@@ -271,12 +246,13 @@
                     <p>
                         <a href="#!">Lorem Ipsum</a>
                     </p>
+
                     <p>
                         <a href="#">Lorem Ipsum</a>
                     </p>
                 </div>
 
-                <!-- Grid column -->
+   <!-- Grid column -->
                 <hr class="w-100 clearfix d-md-none" id="foot">
 
                 <!-- Grid column -->
@@ -325,7 +301,8 @@
                             </li>
                             <li class="list-inline-item">
                                 <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/">
-                                    <img src="img/twitter.png" title="twitter">
+
+                  <img src="img/twitter.png" title="twitter">
                                 </a>
                             </li>
                             <li class="list-inline-item">
@@ -357,11 +334,6 @@
     <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
 
-    <!--I close the while -->
-    <?php
-    }
-    //to let know my request is finished
-    $reponse->closeCursor(); ?>
 
 
     <!--//////////////////////////////  SCRIPTS  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->

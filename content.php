@@ -29,9 +29,9 @@
     <?php
 
     // On récupère tout le contenu de la table films
-    $reponse = $bdd->query('SELECT * FROM films WHERE id =".$_GET['ID']');
+    $reponse = $bdd->query("SELECT * FROM films WHERE id=" .$_GET["ID"]);
 
-      // On affiche chaque entrée une à une
+
     while ($donnees = $reponse->fetch())
     {
     ?>
@@ -116,7 +116,7 @@
 
   <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
   <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
-    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="" height="250px" width="450px"><?php echo $donnees['video']; ?></iframe>
+    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" height="250px" width="450px" src="<?php echo $donnees['video']; ?>"></iframe>
   </div>
 
 <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
