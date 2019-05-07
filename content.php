@@ -27,13 +27,7 @@
     ?>
 
     <?php
-
-    // On récupère tout le contenu de la table films
-    $reponse = $bdd->query("SELECT * FROM films WHERE id=" .$_GET["ID"]);
-
-
-    while ($donnees = $reponse->fetch())
-    {
+    include ("rq-content.php");
     ?>
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -124,6 +118,10 @@
 </div>
 
   </main>
+
+  <?php
+  include ("rq-close.php");
+  ?>
 
 <footer id="footer" class="page-footer font-small text-white mdb-color pt-4 sticky bottom">
 
@@ -256,11 +254,7 @@
 
   </footer>
 
-  <!--I close the while -->
-  <?php
-  }
-  //to let know my request is finished
-  $reponse->closeCursor(); ?>
+
 
   <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
