@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link src="css/animate.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/allo_films.css">
-    <link rel="stylesheet" href="css/animate.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link src="css/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/allo_films.css">
+<link rel="stylesheet" href="css/animate.css">
 
 </head>
 
@@ -44,11 +44,9 @@
     <!--//////////////////////////////  HEADER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="header_films">
-        <h1 class="animated flipInY delay-1s">MES FILMS</h1>
+        <h1 class="animated flipInY delay-1s">NOS FILMS</h1>
 
     </div>
-
-    <!--//////////////////////////////  LISTE GAUCHE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="row nopadding" id="liste_films">
         <div class="col-lg-3 col-md-4 col-sm-4">
@@ -57,16 +55,6 @@
                     <input type="search" id="site-search" name="q" aria-label="Search through site content">
 
                     <button>Rechercher</button>
-
-                    <?php
-
-                    // On joint les 2 tables films et genre_film
-                    $reponse = $bdd->query("SELECT films.titre, genre_film.type_film FROM films INNER JOIN genre_film ON films.genre_film = genre_film.ID_genre LIMIT 0, 10" );
-
-
-                    while ($donnees = $reponse->fetch())
-                    {
-                    ?>
 
                     <li><a href="allo_films.php?id='action'" class="collapsible">Action</a>
 
@@ -88,12 +76,6 @@
                     </li>
                 </ul>
 
-                <!--I close the while -->
-                <?php
-                }
-          
-                //to let know my request is finished
-                $reponse->closeCursor(); ?>
             </div>
 
             <!--//////////////////////////////  LISTE GAUCHE POUR SMARTPHONE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
@@ -126,7 +108,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+</div>
 
         <!--//////////////////////////////  MINIATURES FILMS DROITE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -135,58 +117,26 @@
             <div class="liens_films fadeInUp animated">
                 <div class="titre"> Nouveautés </div><br />
 
-                  <?php
+                <?php
+                include 'rq-films.php';
 
-                  // On récupère tout le contenu de la table films
-                  $reponse = $bdd->query('SELECT * FROM films');
-
-                    // On affiche chaque entrée une à une
-                  while ($donnees = $reponse->fetch())
-                  {
-                  ?>
+                // On affiche chaque entrée une à une
+              while ($donnees = $reponse->fetch())
+              {
+              ?>
 
                 <a href="content.php?ID=<?php echo $donnees['id']; ?>"><img class="effect" src="affiche/<?php echo $donnees['affiche']; ?>" id="action">
                     <p><?php echo $donnees['titre']; ?></p>
                 </a>
 
-                <!--I close the while -->
                 <?php
                 }
+                include 'rq-close.php';
                 ?>
+
             </div>
         </div>
-        <?php
-        //to let know my request is finished
-        $reponse->closeCursor(); ?>
-
-
-        <!--//////////////////////////////  CAROUSEL SIEMA  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
-
-        <div class="siema">
-            <img src="img/1.jpg">
-            <img src="img/2.jpg">
-            <img src="img/3.jpg">
-            <img src="img/4.jpg">
-            <img src="img/5.jpg">
-            <img src="img/6.jpg">
-            <img src="img/7.jpg">
-            <img src="img/8.jpg">
-            <img src="img/9.jpg">
-            <img src="img/10.jpg">
-            <img src="img/1.jpg">
-            <img src="img/2.jpg">
-            <img src="img/3.jpg">
-            <img src="img/4.jpg">
-            <img src="img/5.jpg">
-            <img src="img/6.jpg">
-        </div>
-
-        <button class="prev">
-            <p>
-                <</p> </button> <button class="next">
-                    <p>></p>
-        </button>
-    </div>
+</div>
 
     <!--//////////////////////////////  FOOTER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 

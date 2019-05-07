@@ -28,7 +28,11 @@
 
     <?php
     include ("rq-content.php");
+
+    while ($donnees = $reponse->fetch())
+    {
     ?>
+
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
@@ -120,6 +124,7 @@
   </main>
 
   <?php
+}
   include ("rq-close.php");
   ?>
 
