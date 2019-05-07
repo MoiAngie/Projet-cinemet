@@ -11,8 +11,10 @@
   <link src="css/animate.css" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/allo_films.css">
-<link rel="stylesheet" href="css/animate.css">
+
+
 
 </head>
 
@@ -26,20 +28,18 @@
 
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
-    <header id="haut">
-        <nav class="fixed-top" id="link_nav">
-            <a href="index.php" id="logo">ALLOCINE<strong>MET</strong></a>
-            <div id="Navbar">
-                <a class="liens" href="allo_films.php">FILMS </a>
-                <a class="liens" href="contact.php">CONTACT </a>
-                <a class="liens" href="acteur.php">ACTEURS </a>
-                <a class="liens" href="realisateur.php">REALISATEURS </a>
-            </div>
-            <div class="m-nav-toggle">
-                <span class="m-toggle-icon"></span>
-            </div>
-        </nav>
-    </header>
+    <!--    code pour la navbar   -->
+
+    <nav class="fixed-top" id="link_nav">
+       <a href="index.php" id="logo">CINE<strong>MET</strong></a>
+       <div id="Navbar">
+           <a class="liens" href="allo_films.php">FILMS </a>
+           <a class="liens"href="contact.php"> LOGIN </a>
+       </div>
+       <div class="m-nav-toggle">
+           <span class="m-toggle-icon"></span>
+       </div>
+</nav>
 
     <!--//////////////////////////////  HEADER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 

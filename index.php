@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projet cineMET</title>
 
-<!-- Bootstrap CSS -->
+<!-- Pour la navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Bootstrap CSS pour le footer-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--Animate CSS -->
+<!--Animate CSS pour le titre-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 <!--  pour la police des titres  -->
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -36,20 +39,19 @@
       <header>
         <!--    code pour la navbar   -->
 
-        <nav class="fixed-top" id="link_nav">
+        <nav class="nav-wrapper" id="link_nav">
            <a href="index.thml" id="logo">CINE<strong>MET</strong></a>
-           <div id="Navbar">
-               <a class="liens" href="allo_films.php">FILMS </a>
-               <a class="liens"href="contact.php"> LOGIN </a>
-           </div>
-           <div class="m-nav-toggle">
-               <span class="m-toggle-icon"></span>
-           </div>
-</nav>
+           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+           <ul class="right hide-on-med-and-down">
+               <li><a class="liens" href="allo_films.php">FILMS </a></li>
+               <li><a class="liens"href="contact.php"> LOGIN </a></li>
+           </ul>
+         </nav>
 
-
-
-
+          <ul class="sidenav" id="mobile-demo">
+            <li><a class="liens" href="allo_films.php">FILMS </a></li>
+            <li><a class="liens"href="contact.php"> LOGIN </a></li>
+        </ul>
     </header>
     <!---  code pour le slider -->
 
@@ -67,13 +69,13 @@
     <!--  code pour le carroussel --->
 <main id="main">
     <div id="carou">
-			<div id="c1" class="carouCard leftC"><img src="img/1.jpg" width="188px" height="250px"></div>
-			<div id="c2" class="carouCard leftC"><img src="img/2.jpg" width="188px" height="250px" class="img-g"></div>
-			<div id="c3" class="carouCard leftC"><img src="img/3.jpg" width="188px" height="250px"></div>
-			<div id="c4" class="carouCard"><img src="img/4.jpg" width="214px" height="285px" class="img-center"></div>
-			<div id="c5" class="carouCard rightC"><img src="img/5.jpg" width="188px" height="250px"></div>
-			<div id="c6" class="carouCard rightC"><img src="img/6.jpg" width="188px" height="250px"></div>
-			<div id="c7" class="carouCard rightC"><img src="img/7.jpg" width="188px" height="250px"></div>
+			<div id="c1" class="carouCard leftC"><img src="affiche/raoul_taburin.jpg" width="188px" height="250px"></div>
+			<div id="c2" class="carouCard leftC"><img src="affiche/after.jpg" width="188px" height="250px" class="img-g"></div>
+			<div id="c3" class="carouCard leftC"><img src="affiche/captain-marvel.jpg" width="188px" height="250px"></div>
+			<div id="c4" class="carouCard"><img src="affiche/avengers-endgame.jpg" width="214px" height="285px" class="img-center"></div>
+			<div id="c5" class="carouCard rightC"><img src="affiche/shazam.jpg" width="188px" height="250px"></div>
+			<div id="c6" class="carouCard rightC"><img src="affiche/just_a_gigolo.jpg" width="188px" height="250px"></div>
+			<div id="c7" class="carouCard rightC"><img src="affiche/dumbo.jpg" width="188px" height="250px"></div>
 		</div>
 
 </main>
@@ -241,8 +243,32 @@
   </footer>
 
 
+<!-- mon JS pour la navbar -->
+<script>
 
-    <!-- mon JS -->
+	$(document).ready(function(){
+
+		$(window).scroll(function(){
+
+			if($(window).scrollTop()>300){
+				$('nav').addClass('red');
+			}else{
+				$('nav').removeClass('red');
+			}
+		})
+	}
+
+)
+</script>
+<script>
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+    
+</script>
+
+
+    <!-- mon JS pour le caroussel-->
 <script>
 $('.owl-carousel').owlCarousel({
   loop: true,
@@ -267,19 +293,20 @@ $('.owl-carousel').owlCarousel({
   }
 })
 </script>
+
+
       <script type="text/javascript" src="js/script.js"></script>
 
       <!-- Pour la parallax -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="js/parallax.min.js"></script>
+
+      <!-- Pour la navbar -->
+<script src="">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js</script>
 
 
-    <script src="js/app.js"></script>
-
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="js/parallax.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <!-- Pour le footer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
