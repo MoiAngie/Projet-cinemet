@@ -20,22 +20,22 @@ body {
   display: flex;
   flex-direction:row;
   justify-content:flex-end;
- width:70%;
- margin:auto;
- font-weight:bolder;
- font-family: 'Marko One', serif;
- font-size: 2em;
+  width:70%;
+  margin:auto;
+  font-weight:bolder;
+  font-family: 'Marko One', serif;
+  font-size: 2em;
 }
 
 #link_nav{
   position: fixed;
   z-index:99;
   display:flex;
- flex-direction: row;
- padding-left:3%;
- padding-top:10px;
- padding-bottom:10px;
- background-color:transparent;
+  flex-direction: row;
+  padding-left:3%;
+  padding-top:10px;
+  padding-bottom:10px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 #link_nav a{
@@ -224,7 +224,7 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #c7c3c3;
+  background-color: #1794ef;
   border-left: solid 5px #4747478a;
   border-top: solid 5px #4747478a;
   border-bottom: solid 5px #4747478a;
@@ -238,12 +238,18 @@ button {
   margin-bottom: 0em;
   margin-top: -0.3em;
   padding-top: 2em;
+  text-overflow: clip;
+  max-width: 75%;
 }
 
 .liens_films a {
   text-decoration: none;
+  color: white !important;
 }
 
+.liens_films a:hover {
+  color: #ffe640;
+}
 
 .titre {
   margin-top: 2%;

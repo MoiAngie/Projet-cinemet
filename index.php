@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projet cineMET</title>
 
-<!-- Pour la navbar -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
 <!-- Bootstrap CSS pour le footer-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--Animate CSS pour le titre-->
@@ -39,19 +36,16 @@
       <header>
         <!--    code pour la navbar   -->
 
-        <nav class="nav-wrapper" id="link_nav">
-           <a href="index.thml" id="logo">CINE<strong>MET</strong></a>
-           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-           <ul class="right hide-on-med-and-down">
-               <li><a class="liens" href="allo_films.php">FILMS </a></li>
-               <li><a class="liens"href="contact.php"> LOGIN </a></li>
-           </ul>
-         </nav>
-
-          <ul class="sidenav" id="mobile-demo">
-            <li><a class="liens" href="allo_films.php">FILMS </a></li>
-            <li><a class="liens"href="contact.php"> LOGIN </a></li>
-        </ul>
+        <nav class="fixed-top" id="link_nav">
+           <a href="index.php" id="logo">CINE<strong>MET</strong></a>
+           <div id="Navbar">
+               <a class="liens" href="allo_films.php">FILMS </a>
+               <a class="liens"href="contact.php"> LOGIN </a>
+           </div>
+           <div class="m-nav-toggle">
+               <span class="m-toggle-icon"></span>
+           </div>
+    </nav>
     </header>
     <!---  code pour le slider -->
 
@@ -244,27 +238,12 @@
 
 
 <!-- mon JS pour la navbar -->
-<script>
 
-	$(document).ready(function(){
-
-		$(window).scroll(function(){
-
-			if($(window).scrollTop()>300){
-				$('nav').addClass('red');
-			}else{
-				$('nav').removeClass('red');
-			}
-		})
-	}
-
-)
-</script>
 <script>
 $(document).ready(function(){
     $('.sidenav').sidenav();
   });
-    
+
 </script>
 
 
@@ -303,8 +282,10 @@ $('.owl-carousel').owlCarousel({
   <script src="js/parallax.min.js"></script>
 
       <!-- Pour la navbar -->
-<script src="">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js</script>
-
+      <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"
+          integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+      <script src="js/siema.min.js"></script>
+      <script src="js/allo_films.js"></script>
 
       <!-- Pour le footer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

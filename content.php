@@ -37,18 +37,16 @@
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <header id="haut">
-        <nav class="fixed-top" id="link_nav">
-            <a href="index.php" id="logo">ALLOCINE<strong>MET</strong></a>
-            <div id="Navbar">
-                <a class="liens" href="allo_films.php">FILMS </a>
-                <a class="liens"href="contact.php">CONTACT </a>
-                <a class="liens"href="acteur.php">ACTEURS </a>
-                <a class="liens"href="realisateur.php">REALISATEURS </a>
-            </div>
-            <div class="m-nav-toggle">
-                <span class="m-toggle-icon"></span>
-            </div>
-        </nav>
+      <nav class="fixed-top" id="link_nav">
+         <a href="index.php" id="logo">CINE<strong>MET</strong></a>
+         <div id="Navbar">
+             <a class="liens" href="allo_films.php">FILMS </a>
+             <a class="liens"href="contact.php"> LOGIN </a>
+         </div>
+         <div class="m-nav-toggle">
+             <span class="m-toggle-icon"></span>
+         </div>
+  </nav>
     </header>
 
 
@@ -57,11 +55,7 @@
     <!--  pour le titre -->
 
   <div class="hoofd">
-    <h1 class="text-uppercase"><?php echo $donnees['titre']; ?></h1>
-    <div class="fleches_2">
-    <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
-    <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
-</div>
+    <h1 class="text-uppercase animated flipInY delay-1s"><?php echo $donnees['titre']; ?></h1>
 </div>
 
     <!-- pour l'image du film
@@ -263,12 +257,19 @@
 
   <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
+
+  <!-- Pour la navbar -->
+  <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"
+      integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+  <script src="js/siema.min.js"></script>
+  <script src="js/allo_films.js"></script>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script>
+<!--<script>
 
 $('.m-nav-toggle').click(function(e){
         e.preventDefault();
@@ -293,7 +294,7 @@ function openModal() {
 
 function closeModal() {
     document.getElementById("modal").style.top = "-780px";
-}</script>
+}</script>-->
 
 </body>
 </html>
