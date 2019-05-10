@@ -19,6 +19,7 @@
 </head>
 
 <body>
+
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <!--    code pour la navbar   -->
@@ -48,20 +49,16 @@
                     <input type="search" id="site-search" name="q" aria-label="Search through site content">
 
                     <button>Rechercher</button>
+                    <?php
+                    require_once 'connectbdd.php';
 
-                    <!--je me connecte à la base de données -->
-                      <?php
-                      require_once 'connectbdd.php';
+                    $req = "SELECT genre_film,ID_genre FROM Genre_film";
+                    $reponse = $bdd->query($req);
 
-                      $req = "SELECT genre_film,ID_genre FROM Genre_film";
-                      $reponse = $bdd->query($req);
-
-
-                      // On affiche chaque entrée une à une
-                      while ($donnees = $reponse->fetch())
-                      {
-                      ?>
-
+                    // On affiche chaque entrée une à une
+                  while ($donnees = $reponse->fetch())
+                  {
+                  ?>
                     <li><a href="genre.php?id=<?= $donnees['ID_genre']; ?>" class="collapsible"><?= $donnees['genre_film']; ?></a>
                     </li>
 
@@ -110,25 +107,47 @@
 
         <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="liens_films fadeInUp animated">
-                <div class="titre"> Nouveautés </div><br />
+              <?php
+              require_once 'connectbdd.php';
 
-                <?php
-                include 'rq-films.php';
+              $id = $_GET['id'];
+              $req = "SELECT genre_film,ID_genre FROM Genre_film WHERE Genre_film.ID_genre=$id";
+              $reponse = $bdd->query($req);
 
-                // On affiche chaque entrée une à une
-              while ($donnees = $reponse->fetch())
-              {
-              ?>
+              // On affiche chaque entrée une à une
+            while ($donnees = $reponse->fetch())
+            {
+            ?>
 
-                <a href="content.php?ID=<?= $donnees['id']; ?>"><img class="effect" src="affiche/<?= $donnees['affiche']; ?>" id="action">
-                    <p><?= $donnees['titre']; ?></p>
-                </a>
+
+
+                <div class="titre"><?= $donnees['genre_film']; ?></div><br />
 
                 <?php
                 }
-                include 'rq-close.php';
+                $reponse->closeCursor(); // Termine le traitement de la requête
                 ?>
 
+                <!--je me connecte à la base de données -->
+                  <?php
+                  require_once 'connectbdd.php';
+
+                  $id = $_GET['id'];
+                    $req = "SELECT * FROM Genre_film,appartient,Films WHERE Genre_film.ID_genre=$id AND appartient.ID_genre = Genre_film.ID_genre AND Films.ID_film = appartient.ID_film ";
+                    $reponse = $bdd->query($req);
+
+                  // On affiche chaque entrée une à une
+                    while ($donnees = $reponse->fetch())
+                    {
+                    ?>
+                <a href="content.php?id=<?= $donnees['id']; ?>"><img class="effect " src="affiche/<?= $donnees['affiche_film']; ?>" id="action">
+              <p><?= $donnees['titre_film']; ?></p>
+          </a>
+
+      <?php
+      }
+      $reponse->closeCursor(); // Termine le traitement de la requête
+      ?>
             </div>
         </div>
 </div>
