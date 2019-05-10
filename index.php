@@ -66,7 +66,7 @@
 			<div id="c1" class="carouCard leftC"><img src="affiche/raoul_taburin.jpg" width="188px" height="250px"></div>
 			<div id="c2" class="carouCard leftC"><img src="affiche/after.jpg" width="188px" height="250px" class="img-g"></div>
 			<div id="c3" class="carouCard leftC"><img src="affiche/captain-marvel.jpg" width="188px" height="250px"></div>
-			<div id="c4" class="carouCard"><img src="affiche/avengers-endgame.jpg" width="214px" height="285px" class="img-center"></div>
+			<div id="c4" class="carouCard centerC"><img src="affiche/avengers-endgame.jpg" width="214px" height="285px" class="img-center"></div>
 			<div id="c5" class="carouCard rightC"><img src="affiche/shazam.jpg" width="188px" height="250px"></div>
 			<div id="c6" class="carouCard rightC"><img src="affiche/just_a_gigolo.jpg" width="188px" height="250px"></div>
 			<div id="c7" class="carouCard rightC"><img src="affiche/dumbo.jpg" width="188px" height="250px"></div>

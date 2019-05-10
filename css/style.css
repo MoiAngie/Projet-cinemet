@@ -202,7 +202,7 @@ span.m-toggle-icon:after{top: -13px;}
 }
 
 .img-center {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .img-center:hover {
