@@ -83,7 +83,7 @@
     <!-- code pour l'encart photo+texte -->
     <div class="encart">
       <div class="fond-img">
-      <img src="img/cinema.jpg" width="440" height="330">
+      <center><img src="img/cinema.jpg" width="440" height="330"></center>
     </div>
       <div class="blabla">
       <h2 class="titre-encart"> Le cinéma Metropolis</h2>
