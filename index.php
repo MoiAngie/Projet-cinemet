@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -40,7 +41,7 @@
            <a href="index.php" id="logo">CINE<strong>MET</strong></a>
            <div id="Navbar">
                <a class="liens" href="allo_films.php">FILMS </a>
-               <a class="liens"href="contact.php"> LOGIN </a>
+               <a class="liens"href="login.php"> LOGIN </a>
            </div>
            <div class="m-nav-toggle">
                <span class="m-toggle-icon"></span>
