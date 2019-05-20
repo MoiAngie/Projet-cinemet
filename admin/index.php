@@ -1,4 +1,4 @@
-<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,41 +27,33 @@
 
 <body>
 
-
-  <!--je me connecte à la base de données -->
-    <?php
-      require_once '../Database.php';
-      if (!$_SESSION['admin']) {
-        header('location:login.php');
-      }
-
-
-    ?>
-
-
       <header>
-        <!--    code pour la navbar   -->
+         <!--code pour la navbar-->
 
-        <nav class="fixed-top" id="link_nav">
-           <a href="index.php" id="logo">CINE<strong>MET</strong></a>
-           <div id="Navbar">
-               <a class="liens" href="allo_films.php">FILMS </a>
-               <a class="liens"href="login.php"> LOGIN </a>
-           </div>
-           <div class="m-nav-toggle">
-               <span class="m-toggle-icon"></span>
-           </div>
-    </nav>
+          <nav class="fixed-top" id="link_nav">
+             <a href="index.php" id="logo">CINE<strong>MET</strong></a>
+             <div id="Navbar">
+                 <a class="liens" href="allo_films.php">FILMS </a>
+                 <a class="liens"href="login.php"> LOGIN </a>
+             </div>
+             <div class="m-nav-toggle">
+                 <span class="m-toggle-icon"></span>
+             </div>
+         </nav>
     </header>
 
     <!--- code pour la gestion admin-->
-<div class="container">
-  <h3>Bienvenue <?= $_SESSION['admin'] ?><h3>
+      <?php
 
-</div>
+        include 'mesFonctionsSQL.php';
 
-
-
+        $film = readFilm(3);
+        //echo $film['titre_film'];
+        while ($donnees = $film->fetch())
+        {
+          echo $donnees['titre_film'];
+        }
+      ?>
 
 
 <!-- mon JS pour la navbar -->
@@ -72,10 +64,6 @@ $(document).ready(function(){
   });
 
 </script>
-
-
-
-
       <script type="text/javascript" src="../js/script.js"></script>
 
 

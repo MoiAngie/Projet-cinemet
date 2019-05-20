@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  max-width: 1200px;
+  margin: 1em;
+}
+
+/*/////////////////pour le tableau\\\\\\\\\\\\\\\\*/
+
+table {
+  margin: 0.3em auto;
+  border-collapse: collapse;
+  display: inline-block;
+
+}
+
+td, th {
+  border: 2px solid black;
+  padding: 1em;
+  text-align: center;
+
+}
+
+th {
+  background-color: #444561;
+  color: white;
+}
+
+.tableau {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/*/////////////////pour le formmulaire\\\\\\\\\\\\\\\\*/
+
+
+form {
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 1190px;
+  height: auto;
+  font-family: sans-serif;
+  font-size: 3em;
+}
+
+input {
+  width: 50em;
+  height: 2em;
+  border: none;
+  border-bottom: 1px solid #444561;
+  float: right;
+  margin-top: 1.5em;
+}
+
+p {
+  margin: 2em;
+}
+
+button {
+  text-align: center;
+  min-width: 20em;
+  min-height: 4em;
+  background-color: #444561;
+  color: white;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+
+button a {
+  text-decoration: none;
+  padding: 1em;
+  color: white;
+}
+
+button a:hover {
+  color: #ffe640;
+  text-decoration: none;
+}
